@@ -22,10 +22,10 @@ app.use((req , res , next) => {
 app.use('/api/workouts',workoutRoutes)
 app.use('/api/user',userRoutes)
 
-app.use(express.static(path.join(__dirname , '../my_todo_mern_app/build')))
+app.use(express.static(path.join(__dirname , './build')))
 
 app.get("*" , (req , res ) => {
-    res.sendFile(path.join(__dirname,"../my_todo_mern_app/build/index.html"))
+    res.sendFile(path.join(__dirname,"./build/index.html"))
 })
 const port = process.env.PORT || 4000
 // Connect to db 
